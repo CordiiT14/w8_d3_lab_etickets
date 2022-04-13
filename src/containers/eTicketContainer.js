@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
-import Modal from 'react-modal';
+import ReactModal from 'react-modal';
 import Header from '../components/Header';
 import ListOfEvents from '../components/ListOfEvents';
 import BasketContainer from './BasketContainer';
 import BasketContext from '../context/BasketContext';
+import {useToggle} from '../hooks/useToggle';
 
 const ETicketContainer = () => {
 
@@ -21,11 +22,26 @@ const ETicketContainer = () => {
     const [user, setUser] = useState("");
     const [basket, setBasket] = useState([]);
 
+    let [isModalOpen, setIsModalOpen] = useToggle();
+
+    const handleNameChange = (event) => {
+        setUser(event.target.value)
+    }
+
+    const handleClick = () => {
+        setIsModalOpen();
+    }
+
     return(
         <>
-        <Modal>
-
-        </Modal>   
+        <ReactModal
+        isOpen={isModalOpen}
+        ariaHideApp={false}
+        contentLabel="Username"
+        >
+        <input type="text" name="name" placeholder="name" onChange={handleNameChange}></input>
+        <button onClick={handleClick}>Confirm User</button>
+        </ReactModal>   
         <Header user={user} basket={basket}/>
         <BasketContext.Provider value={{basket, setBasket}}>
         <ListOfEvents listOfEvents={listOfEvents}/>

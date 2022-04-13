@@ -9,8 +9,8 @@ const BasketContainer = () => {
 
     const {basket, setBasket} = useContext(BasketContext)
 
-    const basketNodes = basket.map((eventItem) => {
-        return <BasketItems eventItem={eventItem}/>
+    const basketNodes = basket.map((eventItem, index) => {
+        return <BasketItems eventItem={eventItem} index={index}/>
     })
 
     return(
@@ -18,9 +18,6 @@ const BasketContainer = () => {
             <h3>Basket</h3>
             <ul>
                 {basketNodes}
-                <li>
-                "The Northman" | £10
-                </li>
             </ul>
         </div>
     )

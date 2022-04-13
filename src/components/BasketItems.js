@@ -1,10 +1,10 @@
 import React from 'react';
 
-const BasketItems = ({eventItem}) => {
+const BasketItems = ({eventItem, index}) => {
 
     return(
         <div>
-            <li>
+            <li key={index}>
                 {eventItem.name} | £{eventItem.price}
             </li>
 
