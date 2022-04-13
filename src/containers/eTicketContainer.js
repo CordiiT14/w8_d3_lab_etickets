@@ -6,7 +6,7 @@ import BasketContainer from './BasketContainer';
 
 const ETicketContainer = () => {
 
-    const [ListOfEvents, setListOfEvents] = useState([
+    const [listOfEvents, setListOfEvents] = useState([
         { name: "The Lost City",
         price: 8,
         img: "https://upload.wikimedia.org/wikipedia/en/e/ee/TheLostCityPoster.jpg"},
@@ -26,8 +26,8 @@ const ETicketContainer = () => {
 
         </Modal>   
         <Header user={user} basket={basket}/>
-        {/* <ListOfEvents />
-        <BasketContainer /> */}
+        <ListOfEvents listOfEvents={listOfEvents}/>
+        {/* <BasketContainer /> */}
         </>
     )
 }
