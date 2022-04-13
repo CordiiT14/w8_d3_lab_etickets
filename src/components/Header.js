@@ -1,13 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Header = ({user, basket}) => {
 
+const Header = styled.div`
+    display: flex;
+    justify-content: space-between;
+    background: #2B4141;
+    color: #C8C2AE;
+`
+
+ const Title = styled.h1`
+    margin: 20px;
+ `
+
+ const Basket = styled.div`
+    padding: 20px;
+    font-size: 15px;
+ `
+
     return(
-        <div id="Header">
-            <h3 id="welcome">Welcome {user}</h3>
-            <button>Basket</button>
-            <h2>{basket.length}</h2>
-        </div>
+        <Header>
+            <Title id="welcome">Welcome {user}</Title>
+            <Basket>
+            <button>Basket: {basket.length}</button>
+            </Basket>
+        </Header>
     );
 }
 

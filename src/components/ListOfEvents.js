@@ -1,5 +1,6 @@
 import React from 'react';
 import Event from './Event';
+import styled from 'styled-components';
 
 const ListOfEvents = ({listOfEvents}) => {
 
@@ -9,13 +10,26 @@ const ListOfEvents = ({listOfEvents}) => {
         )
     })
 
+    const AllEvents = styled.div`
+    background: #8AB9B5;
+    text-align: center;
+    `
+
+    const Events = styled.ul`
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+
+    `
+
     return(
-        <div>
+        <AllEvents>
             <h2>Upcoming Events</h2>
-            <ul>
+            <Events>
                 {eventNodes}
-            </ul>
-        </div>
+            </Events>
+        </AllEvents>
     )
 }
 

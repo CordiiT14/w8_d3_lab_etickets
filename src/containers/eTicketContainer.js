@@ -32,6 +32,7 @@ const ETicketContainer = () => {
         setIsModalOpen();
     }
 
+
     return(
         <>
         <ReactModal
