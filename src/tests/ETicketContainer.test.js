@@ -1,7 +1,7 @@
 import ETicketContainer from "../containers/eTicketContainer";
 import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
-import {shallow, configure } from 'enzyme';
+import {shallow, configure} from 'enzyme';
 import ReactModal from 'react-modal';
 
 describe("ETicketContainer", () => {
@@ -10,7 +10,7 @@ describe("ETicketContainer", () => {
 
     let container;
     beforeEach(()=> {
-        container = shallow(<ETicketContainer/>)
+        container = shallow(<ETicketContainer/>);
     });
 
     it('Modal should render' , () => {
@@ -26,5 +26,10 @@ describe("ETicketContainer", () => {
         container.find('button').simulate('click');
         expect(container.find(ReactModal).prop('isOpen')).toBe(false);
     });
+
+    it('Should take input', () => {
+        container.find("input").simulate('change', {target: {value: "Cordii"}})
+        expect(container.find("input").get(0).props.value).toEqual("Cordii");
+    })
 
 })

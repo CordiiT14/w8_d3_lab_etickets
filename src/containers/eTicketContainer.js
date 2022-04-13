@@ -39,7 +39,7 @@ const ETicketContainer = () => {
         ariaHideApp={false}
         contentLabel="Username"
         >
-        <input type="text" name="name" placeholder="name" onChange={handleNameChange}></input>
+        <input type="text" name="name" placeholder="name" value={user} onChange={handleNameChange} required></input>
         <button onClick={handleClick}>Confirm User</button>
         </ReactModal>   
         <Header user={user} basket={basket}/>
