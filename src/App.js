@@ -1,8 +1,9 @@
 import './App.css';
+import ETicketContainer from './containers/ETicketContainer';
 
 function App() {
   return (
-    <eTicketContainter/>
+    <ETicketContainer/>
   );
 }
 
