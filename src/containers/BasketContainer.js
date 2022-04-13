@@ -1,10 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import BasketItems from '../components/BasketItems';
+import BasketContext from '../context/BasketContext';
 
 
-const BasketContainer = ({basket, setBasket}) => {
+const BasketContainer = () => {
 
     const [total, setTotal] = useState(0)
+
+    const {basket, setBasket} = useContext(BasketContext)
 
     const basketNodes = basket.map((eventItem) => {
         return <BasketItems eventItem={eventItem}/>

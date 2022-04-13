@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import Header from '../components/Header';
 import ListOfEvents from '../components/ListOfEvents';
 import BasketContainer from './BasketContainer';
+import BasketContext from '../context/BasketContext';
 
 const ETicketContainer = () => {
 
@@ -26,8 +27,10 @@ const ETicketContainer = () => {
 
         </Modal>   
         <Header user={user} basket={basket}/>
+        <BasketContext.Provider value={{basket, setBasket}}>
         <ListOfEvents listOfEvents={listOfEvents}/>
-        <BasketContainer basket={basket} setBasket={setBasket}/>
+        <BasketContainer/>
+        </BasketContext.Provider>
         </>
     )
 }
