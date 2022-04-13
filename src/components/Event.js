@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Event = ({film}) => {
+const Event = ({event}) => {
 
     return(
         <li>
-        <img src={film.img} alt="movie-poster"></img>
-        <h3>{film.name}</h3>
-        <h4>£{film.price}</h4>
+        <img src={event.img} alt="movie-poster"></img>
+        <h3>{event.name}</h3>
+        <h4>£{event.price}</h4>
         </li>
     )
 }

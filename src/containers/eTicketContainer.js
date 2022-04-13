@@ -27,7 +27,7 @@ const ETicketContainer = () => {
         </Modal>   
         <Header user={user} basket={basket}/>
         <ListOfEvents listOfEvents={listOfEvents}/>
-        {/* <BasketContainer /> */}
+        <BasketContainer basket={basket} setBasket={setBasket}/>
         </>
     )
 }

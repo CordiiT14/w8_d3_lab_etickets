@@ -3,9 +3,9 @@ import Event from './Event';
 
 const ListOfEvents = ({listOfEvents}) => {
 
-    const eventNodes = listOfEvents.map((film)=> {
+    const eventNodes = listOfEvents.map((event)=> {
         return(
-            <Event film={film}/>
+            <Event event={event}/>
         )
     })
 
